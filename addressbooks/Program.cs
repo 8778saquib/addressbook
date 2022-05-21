@@ -10,6 +10,7 @@ namespace addressbooks
 
             Console.WriteLine("Enter the choice");
             Console.WriteLine(" 1. adding detail");
+            Console.WriteLine("2. Add new contact");
 
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -18,6 +19,11 @@ namespace addressbooks
                 case 1:
                     createcontact a = new createcontact("saquib", "nawaz", "Warje", "chennai", "tamilnadu", "saquib.nawaz009@gmail.com", 274001, 8778225600);
                     a.DisplayDetails();
+                    break;
+                case 2:
+                    Addcontact person = new Addcontact();
+                    person.AddingContactDetails();
+                    person.DisplayDetails();
                     break;
 
                 default:
