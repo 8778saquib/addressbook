@@ -67,5 +67,83 @@ namespace addressbooks
             }
         }
 
+
+
+        //Editing in existing contact details
+        public void EditContactDetails()
+        {
+            Console.Write("Enter the First Name of the contact for which you want to edit : ");
+            string fName = Console.ReadLine();
+            foreach (createcontact detail in detailsList)
+            {
+                if (detail.firstName == fName)
+                {
+                    Console.WriteLine("1. First Name");
+                    Console.WriteLine("2. Last Name");
+                    Console.WriteLine("3. Address");
+                    Console.WriteLine("4. City");
+                    Console.WriteLine("5. State");
+                    Console.WriteLine("6. Zip code");
+                    Console.WriteLine("7. Phone number");
+                    Console.WriteLine("8. Email id");
+                    Console.WriteLine("Other. Exit to display contact details");
+                    Console.Write("Choose what you want to edit : ");
+                    int choice = Convert.ToInt32(Console.ReadLine());
+                    switch (choice)
+                    {
+                        case 1:
+                            Console.Write("Enter new First Name : ");
+                            string newName = Console.ReadLine();
+                            detail.firstName = newName;
+                            break;
+                        case 2:
+                            Console.Write("Enter new Last Name : ");
+                            string newLast = Console.ReadLine();
+                            detail.lastName = newLast;
+                            break;
+                        case 3:
+                            Console.Write("Enter new Address : ");
+                            string newAdd = Console.ReadLine();
+                            detail.address = newAdd;
+                            break;
+                        case 4:
+                            Console.Write("Enter new City : ");
+                            string newCity = Console.ReadLine();
+                            detail.city = newCity;
+                            break;
+                        case 5:
+                            Console.Write("Enter new State : ");
+                            string newState = Console.ReadLine();
+                            detail.state = newState;
+                            break;
+                        case 6:
+                            Console.Write("Enter new zip code : ");
+                            int newZip = Convert.ToInt32(Console.ReadLine());
+                            detail.zip = newZip;
+                            break;
+                        case 7:
+                            Console.Write("Enter new Phone number : ");
+                            long newPhone = Convert.ToInt64(Console.ReadLine());
+                            detail.phoneNumber = newPhone;
+                            break;
+                        case 8:
+                            Console.Write("Enter new Email id : ");
+                            string newEmail = Console.ReadLine();
+                            detail.email = newEmail;
+                            break;
+                        default:
+                            Console.WriteLine("\nEnter correct choice");
+                            break;
+                    }
+                }
+
+                //If input does not match with the contact list detail
+                else
+                {
+                    Console.WriteLine("Entered input does not match with contact details");
+                }
+            }
+        }
+
     }
 }
