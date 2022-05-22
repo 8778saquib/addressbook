@@ -12,6 +12,7 @@ namespace addressbooks
             Console.WriteLine(" 1. adding detail");
             Console.WriteLine("2. Add new contact");
             Console.WriteLine("3.edit add  detail");
+            Console.WriteLine("4. Delete added person contact using name");
 
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -42,6 +43,28 @@ namespace addressbooks
                         person2.DisplayDetails();
                     }
                     break;
+                case 4:
+                    Addcontact person4 = new Addcontact();
+                    person4.AddingContactDetails();
+                    person4.DisplayDetails();
+
+                    //Asking user if he/she wanted to edit the contact details or not
+                    Console.WriteLine("Edit contact details using name ? 1: Yes/ Other: No");
+                    Console.Write("Enter your choice : ");
+                    int choice4 = Convert.ToInt32(Console.ReadLine());
+                    if (choice4 == 1)
+                    {
+                        person4.EditContactDetails();
+                        person4.DisplayDetails();
+                    }
+
+                    //Asking user if he/she wanted to delete the contact details or not
+                    Console.WriteLine("Delete person using person name ? 1. Yes/ Other:  No");
+                    Console.Write("Enter your choice : ");
+                    int choice42 = Convert.ToInt32(Console.ReadLine());
+                    person4.DeleteContactDetails();
+                    //person4.DisplayDetails();
+                    break;
 
 
                 default:
@@ -51,6 +74,7 @@ namespace addressbooks
             }
 
         }
+
 
     }
 }

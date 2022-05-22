@@ -144,6 +144,25 @@ namespace addressbooks
                 }
             }
         }
+        //For deleting person details
+        public void DeleteContactDetails()
+        {
+            Console.Write("Enter First name of the contact detail you want to delete : ");
+            string deleteName = Console.ReadLine();
+            foreach (createcontact detail in detailsList)
+            {
+                if (detail.firstName == deleteName)
+                {
+                    detailsList.Remove(detail);
+                    Console.WriteLine("Person details deleted");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Wrong credentials");
+                }
+            }
+        }
 
     }
 }
